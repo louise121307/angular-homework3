@@ -3,13 +3,16 @@ import { CommonModule } from '@angular/common';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { ItemComponent } from './item/item.component';
 import { InputComponent } from './input/input.component';
+import { EditPageComponent } from './edit-page/edit-page.component';
+import { FormsModule } from '@angular/forms';
 
 
 
 @NgModule({
-  declarations: [TodoListComponent, ItemComponent, InputComponent],
+  declarations: [TodoListComponent, ItemComponent, InputComponent, EditPageComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports: [TodoListComponent]
 })

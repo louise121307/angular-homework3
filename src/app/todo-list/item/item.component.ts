@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 // Service
 import { TodoListService } from '../todo-list.service';
@@ -19,7 +20,7 @@ export class ItemComponent implements OnInit {
   todoStatusType = TodoStatusType;
   private status = TodoStatusType.All;
 
-  constructor(public todoListService: TodoListService) { }
+  constructor(public todoListService: TodoListService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -70,5 +71,9 @@ export class ItemComponent implements OnInit {
 
   remove(index: number): void {
     this.todoListService.remove(index);
+  }
+
+  edit(index: number) {
+    this.router.navigate(['edit', index]);
   }
 }

@@ -6,7 +6,7 @@ import { TodoListService } from '../todo-list.service';
 @Component({
   selector: 'app-input',
   templateUrl: './input.component.html',
-  styleUrls: ['./input.component.css']
+  styleUrls: ['./input.component.css', '../todo-list/todo-list.component.css']
 })
 export class InputComponent implements OnInit {
 
