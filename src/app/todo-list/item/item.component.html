@@ -23,7 +23,7 @@
         <input class="toggle" type="checkbox"
             (click)="todo.toggleCompletion()"
             [checked]="todo.getCompleted()">
-        <label (dblclick)="edit(todo.getKey())">{{ todo.getTitle() }}</label>
+        <label (dblclick)="edit(todo.getIndex())">{{ todo.getTitle() }}</label>
         <div class="status">{{ todo.getStatus() }}</div>
         <button class="destroy" (click)="remove(i)"></button>
       </div>

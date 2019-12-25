@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+
+// Service
 import { TodoListService } from '../todo-list.service';
 
 @Component({
@@ -11,7 +13,6 @@ import { TodoListService } from '../todo-list.service';
 export class EditPageComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute,
-              private router: Router,
               private location: Location,
               private todoListService: TodoListService) { }
 

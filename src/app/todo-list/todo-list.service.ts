@@ -11,6 +11,7 @@ export class TodoListService {
   private list: Todo[] = [];
 
   constructor() {
+    // default item
     this.add('Item 1');
     this.add('Item 2', true);
     this.add('Item 3');
@@ -24,19 +25,21 @@ export class TodoListService {
     return this.list.filter(todo => todo.getCompleted() === completed);
   }
 
+  // get item by index
   getItem(index: number): Todo {
-    return this.list.find(item => item.getKey() === index);
+    return this.list.find(item => item.getIndex() === index);
   }
 
   add(title: string, completed?: boolean): void {
     if (title || title.trim()) {
-      this.list.push(new Todo(this.newKey(), title, completed));
+      this.list.push(new Todo(this.newIndex(), title, completed));
     }
   }
 
-  newKey(): number {
+  // 取得目前最大的 index + 1
+  newIndex(): number {
     if (this.list.length > 0) {
-      return Math.max(...this.list.map(item => item.getKey())) + 1;
+      return Math.max(...this.list.map(item => item.getIndex())) + 1;
     } else { return 0; }
   }
 
@@ -53,8 +56,6 @@ export class TodoListService {
       // 如果沒有名稱則刪除該項待辦事項
       this.remove(index);
     }
-
-
   }
 
 }

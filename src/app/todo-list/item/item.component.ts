@@ -73,7 +73,7 @@ export class ItemComponent implements OnInit {
     this.todoListService.remove(index);
   }
 
-  edit(index: number) {
+  edit(index: number): void {
     this.router.navigate(['edit', index]);
   }
 }

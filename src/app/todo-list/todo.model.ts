@@ -1,19 +1,19 @@
 export class Todo {
 
-  private key = 0;
+  private index = 0;
   private title = '';
   private completed = false;
 
-  constructor(key: number, title: string, completed?: boolean) {
-    this.key = key;
+  constructor(index: number, title: string, completed?: boolean) {
+    this.index = index;
     this.title = title || '';
     if (typeof completed === 'boolean') {
       this.completed = completed;
     }
   }
 
-  getKey(): number {
-    return this.key;
+  getIndex(): number {
+    return this.index;
   }
 
   getTitle(): string {
